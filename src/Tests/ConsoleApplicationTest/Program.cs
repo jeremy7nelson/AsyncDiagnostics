@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Nito.AsyncEx.AsyncDiagnostics;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.QualityTools.Testing.Fakes.Shims;
-using Nito.AsyncEx.AsyncDiagnostics;
 
 [assembly: AsyncDiagnosticAspect(AttributePriority = 1)]
 
@@ -51,10 +47,6 @@ namespace ConsoleApplication1
         {
             throw new Exception("test");
         }
-
-        static int Property { get; set; }
-
-        static event EventHandler Event;
     }
 
     class Program

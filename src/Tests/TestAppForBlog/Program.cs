@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Nito.AsyncEx.AsyncDiagnostics;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Nito.AsyncEx.AsyncDiagnostics;
 
 [assembly: AsyncDiagnosticAspect]
 

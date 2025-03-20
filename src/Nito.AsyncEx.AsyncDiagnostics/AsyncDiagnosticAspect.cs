@@ -1,9 +1,9 @@
-﻿using System;
+﻿using PostSharp.Aspects;
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
-using PostSharp.Aspects;
 
 namespace Nito.AsyncEx.AsyncDiagnostics
 {

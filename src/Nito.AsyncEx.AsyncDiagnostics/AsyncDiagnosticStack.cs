@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Nito.AsyncEx.AsyncDiagnostics.Internal;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Nito.AsyncEx.AsyncDiagnostics.Internal;
 
 namespace Nito.AsyncEx.AsyncDiagnostics
 {
