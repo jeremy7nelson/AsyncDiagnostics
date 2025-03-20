@@ -23,7 +23,6 @@ namespace Nito.AsyncEx.AsyncDiagnostics
         /// </summary>
         public AsyncDiagnosticAspect()
         {
-            ApplyToStateMachine = false;
         }
 
         /// <summary>

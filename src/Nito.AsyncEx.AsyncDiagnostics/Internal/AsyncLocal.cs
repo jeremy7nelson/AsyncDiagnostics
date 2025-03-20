@@ -1,8 +1,28 @@
 ﻿using System;
-using System.Runtime.Remoting.Messaging;
+using System.Collections.Concurrent;
 
 namespace Nito.AsyncEx.AsyncDiagnostics.Internal
 {
+    internal static class CallContext
+    {
+        static ConcurrentDictionary<string, AsyncLocal<object>> state = new ConcurrentDictionary<string, AsyncLocal<object>>();
+
+        public static void LogicalSetData(string name, object data)
+        {
+            state.GetOrAdd(name, _ => new AsyncLocal<object>(data));
+        }
+
+        public static object LogicalGetData(string name)
+        {
+            return state.TryGetValue(name, out AsyncLocal<object> data) ? data.Value : null;
+        }
+
+        public static void FreeNamedDataSlot(string name)
+        {
+            state.TryRemove(name, out var value);
+        }
+    }
+
     /// <summary>
     /// Data that is "local" to the current async method. This is the async equivalent of <c>ThreadLocal&lt;T&gt;</c>.
     /// </summary>
